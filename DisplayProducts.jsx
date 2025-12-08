@@ -8,6 +8,7 @@ function createProduct(Product) {
     <Category key={Product.id} image={Product.image} title={Product.title} />
   );
 }
+
 function DisplayProducts({ isValid2, nameOfTheUser }) {
   return (
     <div>
@@ -21,4 +22,5 @@ function DisplayProducts({ isValid2, nameOfTheUser }) {
     </div>
   );
 }
+
 export default DisplayProducts;

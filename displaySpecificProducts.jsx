@@ -16,7 +16,10 @@ function DisplaySpecificProducts({ isValid2, nameOfTheUser }) {
 
       try {
         console.log(`Fetching: ${title}`);
-        const response = await fetch(`/api/products/${title}`);
+        const response = await fetch(
+  `${import.meta.env.VITE_BACKEND_URL}/api/products/${title}`
+);
+
 
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -89,3 +92,4 @@ function DisplaySpecificProducts({ isValid2, nameOfTheUser }) {
 }
 
 export default DisplaySpecificProducts;
+

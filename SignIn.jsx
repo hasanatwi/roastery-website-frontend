@@ -10,12 +10,16 @@ function SignIn({ isValid2, setIsValid2, setNameOfTheUser2, setEmail2 }) {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({ username: email, password }),
-      });
+      const response = await fetch(
+  `${import.meta.env.VITE_BACKEND_URL}/login`,
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    credentials: "include",
+    body: JSON.stringify({ username: email, password }),
+  }
+);
+
 
       const data = await response.json();
       if (response.ok) {
@@ -80,3 +84,4 @@ function SignIn({ isValid2, setIsValid2, setNameOfTheUser2, setEmail2 }) {
   );
 }
 export default SignIn;
+

@@ -29,12 +29,16 @@ function SignUp({ isValid2, setIsValid2, setNameOfTheUser2, setEmail2 }) {
     setIsValid2(true);
 
     try {
-      const response = await fetch("/signUp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({ username: email, password, nameOfTheUser }),
-      });
+     const response = await fetch(
+  `${import.meta.env.VITE_BACKEND_URL}/signUp`,
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    credentials: "include",
+    body: JSON.stringify({ username: email, password, nameOfTheUser }),
+  }
+);
+
 
       const data = await response.json();
 
@@ -122,3 +126,4 @@ function SignUp({ isValid2, setIsValid2, setNameOfTheUser2, setEmail2 }) {
 }
 
 export default SignUp;
+

@@ -18,34 +18,36 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
   function updateTotals(newWeight = weight, newQuantity = quantity) {
     const dynamicPrice2 = Number((newWeight * price).toFixed(2));
     setDynamicPrice(dynamicPrice2);
-    const totalWeight = Number((newWeight * newQuantity).toFixed(2));
-    setTotalWeight(totalWeight);
-    setQuantity(newQuantity);
+
+    const totalW = Number((newWeight * newQuantity).toFixed(2));
+    setTotalWeight(totalW);
+
     const newTotalPrice = Number((newQuantity * dynamicPrice2).toFixed(2));
     setTotalPrice(newTotalPrice);
   }
 
   useEffect(() => {
     fetch(
-      `/api/item/${name_of_the_category}/${title}?name=${nameOfTheUser}&email=${email2}`
+      `${import.meta.env.VITE_BACKEND_URL}/api/item/${name_of_the_category}/${title}?name=${nameOfTheUser}&email=${email2}`
     )
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((err) => console.error("Fetch error:", err));
   }, [name_of_the_category, title]);
+
   useEffect(() => {
     if (product) {
       setPrice(product.price_per_kg);
       setDynamicPrice(product.price_per_kg);
     }
   }, [product]);
-  if (!product) {
-    return <h2>Loading product...</h2>;
-  }
+
+  if (!product) return <h2>Loading product...</h2>;
 
   return (
     <div className="item3">
       <Header isValid2={isValid2} nameOfTheUser={nameOfTheUser} />
+
       <div className="item">
         <div className="bigImageInsideItem">
           {product.image ? (
@@ -59,50 +61,52 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
             <p>No image available</p>
           )}
         </div>
+
         <div>
           <h1>{title}</h1>
           <p className="price">{dynamicPrice} $</p>
-          <div>
-            <div className="packedIn">
-              <button
-                className={active1 ? "clicked" : ""}
-                onClick={() => {
-                  setActive1(true);
-                  setActive2(false);
-                  setActive3(false);
-                  setWeight(0.2);
-                  updateTotals(0.2, quantity);
-                }}
-              >
-                200g
-              </button>
 
-              <button
-                className={active2 ? "clicked" : ""}
-                onClick={() => {
-                  setWeight(0.5);
-                  setActive2(true);
-                  setActive3(false);
-                  setActive1(false);
-                  updateTotals(0.5, quantity);
-                }}
-              >
-                500g
-              </button>
-              <button
-                className={active3 ? "clicked" : ""}
-                onClick={() => {
-                  setWeight(1);
-                  setActive1(false);
-                  setActive2(false);
-                  setActive3(true);
-                  updateTotals(1, quantity);
-                }}
-              >
-                1000g
-              </button>
-            </div>
+          <div className="packedIn">
+            <button
+              className={active1 ? "clicked" : ""}
+              onClick={() => {
+                setWeight(0.2);
+                setActive1(true);
+                setActive2(false);
+                setActive3(false);
+                updateTotals(0.2, quantity);
+              }}
+            >
+              200g
+            </button>
+
+            <button
+              className={active2 ? "clicked" : ""}
+              onClick={() => {
+                setWeight(0.5);
+                setActive2(true);
+                setActive1(false);
+                setActive3(false);
+                updateTotals(0.5, quantity);
+              }}
+            >
+              500g
+            </button>
+
+            <button
+              className={active3 ? "clicked" : ""}
+              onClick={() => {
+                setWeight(1);
+                setActive3(true);
+                setActive2(false);
+                setActive1(false);
+                updateTotals(1, quantity);
+              }}
+            >
+              1000g
+            </button>
           </div>
+
           <p>Quantity:</p>
           <input
             type="text"
@@ -112,9 +116,8 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
               setQuantity(q);
               updateTotals(weight, q);
             }}
-          ></input>
-          <br />
-          <br />
+          />
+
           <button
             className="addToCartButton"
             onClick={async () => {
@@ -122,19 +125,13 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
                 window.location.href = "/sign_in";
                 return;
               }
-              if (weight === 0 && quantity === 0) {
+              if (!weight || !quantity) {
                 alert("Choose certain quantity and weight");
                 return;
-              } else if (weight === 0) {
-                alert("Choose a certain weight");
-                return;
               }
-              if (quantity === 0) {
-                alert("Choose a certain quantity");
-                return;
-              }
+
               fetch(
-                `/api/someEndpoint?title=${encodeURIComponent(
+                `${import.meta.env.VITE_BACKEND_URL}/api/someEndpoint?title=${encodeURIComponent(
                   title
                 )}&totalWeight=${totalWeight}&totalPrice=${totalPrice}&email2=${encodeURIComponent(
                   email2
@@ -143,6 +140,7 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
                 .then((res) => res.json())
                 .then((data) => console.log(data))
                 .catch((err) => console.error(err));
+
               alert("The product was added to your cart.");
             }}
           >
@@ -166,4 +164,5 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
     </div>
   );
 }
+
 export default Item;

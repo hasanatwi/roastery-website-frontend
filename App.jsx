@@ -6,13 +6,13 @@ import {
   Link,
   Navigate,
 } from "react-router-dom";
-import Note from "./components/Note";
-import DisplayProducts from "./components/DisplayProducts";
-import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
-import DisplaySpecificProducts from "./components/displaySpecificProducts";
-import Item from "./components/Item";
-import UserProducts from "./components/UserProducts";
+import Note from "./Note";
+import DisplayProducts from "./DisplayProducts";
+import SignUp from "./SignUp";
+import SignIn from "./SignIn";
+import DisplaySpecificProducts from "./displaySpecificProducts";
+import Item from "./Item";
+import UserProducts from "./UserProducts";
 
 function App() {
   const [isValid, setIsValid] = useState(false);

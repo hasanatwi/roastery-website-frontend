@@ -1,6 +1,6 @@
 import React from "react";
 import Category from "./Category";
-import Products from "../utils/products";
+import Products from "./products";
 import Header from "./Header";
 
 function createProduct(Product) {
@@ -24,3 +24,4 @@ function DisplayProducts({ isValid2, nameOfTheUser }) {
 }
 
 export default DisplayProducts;
+

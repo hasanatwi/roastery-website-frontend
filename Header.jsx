@@ -31,7 +31,7 @@ function Header({ isValid2, nameOfTheUser }) {
           <p>{nameOfTheUser}</p>
           <button
             onClick={async () => {
-              await fetch(`https://roastery-website-backend-2.onrender.com/logout`, {
+              await fetch(`https://roastery-website-backend.onrender.com/logout`, {
                 method: "GET",
                 credentials: "include",
               });
@@ -47,4 +47,5 @@ function Header({ isValid2, nameOfTheUser }) {
 }
 
 export default Header;
+
 

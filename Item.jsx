@@ -28,7 +28,7 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
 
   useEffect(() => {
     fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/item/${name_of_the_category}/${title}?name=${nameOfTheUser}&email=${email2}`
+      `https://roastery-website-backend-2.onrender.com/api/item/${name_of_the_category}/${title}?name=${nameOfTheUser}&email=${email2}`
     )
       .then((res) => res.json())
       .then((data) => setProduct(data))
@@ -131,7 +131,7 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
               }
 
               fetch(
-                `${import.meta.env.VITE_BACKEND_URL}/api/someEndpoint?title=${encodeURIComponent(
+                `https://roastery-website-backend-2.onrender.com/api/someEndpoint?title=${encodeURIComponent(
                   title
                 )}&totalWeight=${totalWeight}&totalPrice=${totalPrice}&email2=${encodeURIComponent(
                   email2
@@ -166,3 +166,4 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
 }
 
 export default Item;
+

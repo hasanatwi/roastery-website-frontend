@@ -17,7 +17,7 @@ function DisplaySpecificProducts({ isValid2, nameOfTheUser }) {
       try {
         console.log(`Fetching: ${title}`);
         const response = await fetch(
-  `https://roastery-website-backend.onrender.com/api/products/${title}`
+  `https://roastery-website-backend-2.onrender.com/api/products/${title}`
 );
 
 
@@ -92,6 +92,7 @@ function DisplaySpecificProducts({ isValid2, nameOfTheUser }) {
 }
 
 export default DisplaySpecificProducts;
+
 
 
 

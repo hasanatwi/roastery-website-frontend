@@ -30,7 +30,7 @@ function SignUp({ isValid2, setIsValid2, setNameOfTheUser2, setEmail2 }) {
 
     try {
      const response = await fetch(
-  `https://roastery-website-backend.onrender.com/signUp`,
+  `https://roastery-website-backend-2.onrender.com/signUp`,
   {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -126,6 +126,7 @@ function SignUp({ isValid2, setIsValid2, setNameOfTheUser2, setEmail2 }) {
 }
 
 export default SignUp;
+
 
 
 

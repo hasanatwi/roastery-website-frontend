@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { showEmailError } from "../utils/showEmailError.js";
-import { showPasswordError } from "../utils/showPasswordError.js";
+import { showEmailError } from "./showEmailError.js";
+import { showPasswordError } from "./showPasswordError.js";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 
@@ -126,4 +126,5 @@ function SignUp({ isValid2, setIsValid2, setNameOfTheUser2, setEmail2 }) {
 }
 
 export default SignUp;
+
 

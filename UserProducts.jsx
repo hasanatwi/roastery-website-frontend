@@ -11,7 +11,7 @@ function UserProducts({ email, nameOfTheUser }) {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/userProducts?email=${email}`,
+          `https://roastery-website-backend-2.onrender.com/api/userProducts?email=${email}`,
           {
             credentials: "include",
           }
@@ -77,3 +77,4 @@ function UserProducts({ email, nameOfTheUser }) {
 }
 
 export default UserProducts;
+

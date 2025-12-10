@@ -24,4 +24,3 @@ function DisplayProducts({ isValid2, nameOfTheUser }) {
 }
 
 export default DisplayProducts;
-

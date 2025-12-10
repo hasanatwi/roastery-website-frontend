@@ -77,6 +77,3 @@ function UserProducts({ email, nameOfTheUser }) {
 }
 
 export default UserProducts;
-
-
-

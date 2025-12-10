@@ -166,6 +166,3 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
 }
 
 export default Item;
-
-
-

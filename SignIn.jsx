@@ -11,15 +11,14 @@ function SignIn({ isValid2, setIsValid2, setNameOfTheUser2, setEmail2 }) {
     e.preventDefault();
     try {
       const response = await fetch(
-  `https://roastery-website-backend-2.onrender.com/login`,
-  {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify({ username: email, password }),
-  }
-);
-
+        `https://roastery-website-backend-2.onrender.com/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ username: email, password }),
+        }
+      );
 
       const data = await response.json();
       if (response.ok) {
@@ -84,7 +83,3 @@ function SignIn({ isValid2, setIsValid2, setNameOfTheUser2, setEmail2 }) {
   );
 }
 export default SignIn;
-
-
-
-

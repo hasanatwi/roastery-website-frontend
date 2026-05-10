@@ -30,7 +30,7 @@ function Note({ isValid2, nameOfTheUser }) {
       >
         <div className="margin">
           <h1>
-            FRESHLY ROASTED
+            FRESHLY ROASTED 
             <br />
             COFFEE
           </h1>

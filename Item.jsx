@@ -14,6 +14,7 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
   const [dynamicPrice, setDynamicPrice] = useState(0);
   const [totalWeight, setTotalWeight] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [verifyQuantity, setVerifyQuantity]=useState(true);
 
   function updateTotals(newWeight = weight, newQuantity = quantity) {
     const dynamicPrice2 = Number((newWeight * price).toFixed(2));
@@ -108,13 +109,24 @@ function Item({ isValid2, nameOfTheUser, email2 }) {
           </div>
 
           <p>Quantity:</p>
+          {!verifyQuantity &&
+                    <p style={{
+                        color:"red",
+                        fontSize: "15px",
+                    }}>Please enter a non-negative number</p>
+                    }
           <input
             type="text"
             size="4"
             onChange={(e) => {
-              const q = Number(e.target.value);
-              setQuantity(q);
-              updateTotals(weight, q);
+              if(e.target.value>=0){
+                  setVerifyQuantity(true);
+                  const q = Number(e.target.value);
+                  setQuantity(q);
+                  updateTotals(weight, q);
+              }
+              else
+                setVerifyQuantity(false);
             }}
           />
 

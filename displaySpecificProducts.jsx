@@ -1,93 +1,66 @@
-import React, { useEffect, useState } from "react";
+import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Category from "./Category";
 import Header from "./Header";
-
-function DisplaySpecificProducts({ isValid2, nameOfTheUser }) {
-  const { title } = useParams();
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      setError("");
-
-      try {
-        console.log(`Fetching: ${title}`);
-        const response = await fetch(
-          `https://roastery-website-backend-2.onrender.com/api/products/${title}`
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+import Category from "./Category";
+function DisplaySpecificProducts({isValid, nameOfTheUser, email}){
+    const {title}=useParams();
+    console.log("The title is: "+title);
+    const [products, setProducts]=useState([]);
+    const [loading, setLoading]=useState(false);
+    useEffect(()=>{
+        console.log("The products are: ", products[0]);
+    },[products]);
+    useEffect(()=>{
+        const fetchData=async()=>{
+            setLoading(true);
+            try{
+                const response=await fetch(`https://roastery-website-backend-2.onrender.com/api/products/${title}`);
+                if(!response.ok){
+                    throw new Error(`HTTP ${response} : ${response.statusText}`);
+                }
+                const data=await response.json();
+                console.log("data is: ", data);
+                setProducts(Array.isArray(data)? data : []);
+            }
+            catch(err){
+                console.error("There is an error: ",err);
+                setProducts([]);
+            }
+            finally{
+                setLoading(false);
+            }
         }
-
-        const data = await response.json();
-        console.log(
-          `Received ${Array.isArray(data) ? data.length : "?"} products`
-        );
-        console.log("Sample product:", data[0]);
-
-        setProducts(Array.isArray(data) ? data : []);
-      } catch (err) {
-        console.error("Fetch error:", err);
-        setError(err.message);
-        setProducts([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [title]);
-
-  return (
-    <div>
-      <Header isValid2={isValid2} nameOfTheUser={nameOfTheUser} />
-      <div className="displayProducts">
-        <h1 className="Products">{title}</h1>
-
-        {loading && <p>Loading {title}...</p>}
-
-        {error && (
-          <div style={{ color: "red", padding: "20px" }}>
-            <h3>Error loading {title}:</h3>
-            <p>{error}</p>
-            <p>
-              Try: http://localhost:3000/api/products/
-              {encodeURIComponent(title)}
-            </p>
-          </div>
-        )}
-
-        {!loading && !error && products.length === 0 && (
-          <p>No products found in {title} category</p>
-        )}
-
-        {!loading && !error && products.length > 0 && (
-          <div
+        fetchData();
+    },[title]);
+    return(
+        <div>
+        {loading && (<p
             style={{
-              display: "flex",
-              gap: "20px",
-              flexWrap: "wrap",
-              padding: "20px",
+                fontWeight:"bold",
+                fontSize:"20px",
             }}
-          >
-            {products.map((product) => (
-              <Category
-                key={product.id}
-                image={product.image}
-                title={product.name_of_product}
-                name_of_the_category={title}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  );
+        >Loading {title}...</p>)}
+        {!loading && (
+        <div style={{
+            backgroundColor:"lightyellow",
+            minHeight:"745px",
+        }}>
+            <Header isValid={isValid} nameOfTheUser={nameOfTheUser} email={email}/>
+            <div style={{
+                display: "flex",
+                gap: "20px",
+                flexWrap: "wrap",
+                marginTop: "50px",
+                backgroundColor:"lightyellow",
+            }}>
+                {products.map((product)=>(
+                    <Category title={product.Product_name} image={product.Image} name_of_the_category={title}/>
+                ))}
+            </div>
+        </div>)
+        }
+        </div>
+    );
 }
-
 export default DisplaySpecificProducts;

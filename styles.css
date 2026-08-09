@@ -441,3 +441,59 @@
   flex-direction: column;
   gap: 10px;
 }
+.Item{
+  background-color:lightyellow;
+  min-height:750px;
+}
+.displayingItem{
+  display:flex;
+  flex-wrap:wrap;
+  margin-top:100px;
+  margin-left:350px;
+  background-color:lightyellow;
+}
+.itemInfo{
+  margin-left:30px;
+}
+.itemInfo #title{
+  font-size:35px;
+  font-weight:bold;
+}
+.itemInfo p{
+  font-size:19px;
+}
+.itemInfo b{
+  font-size:18px;
+}
+.displayingItem img{
+  width:400px;
+  height:350px;
+  margin-top:40px;
+}
+.buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap: wrap;
+}
+.activeButton{
+  background-color:green; 
+}
+.quantityToAddToCart{
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+}
+.quantityToAddToCart button{
+  background-color: #f0c080;
+  height: 40px;
+  width: 150px;
+}
+.quantityToAddToCart input{
+  width:50px;
+  height:16px;
+  width:60px;
+}
+.categories{
+  display:flex;
+  flex-wrap:wrap;
+}

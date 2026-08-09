@@ -51,7 +51,13 @@ function Item({isValid, nameOfTheUser, email}){
     return(
         <div className="Item">
             <Header isValid={isValid} nameOfTheUser={nameOfTheUser} email={email}/>
-            <div className="displayingItem">
+            <div style={{
+                  display:flex;
+                  flexWrap:"wrap",
+                  marginTop:"100px",
+                  marginLeft:"350px",
+                  backgroundColor:"lightyellow",
+            }}>
                 <img src={product.Image}/>
                 <div className="itemInfo">
                     <p id="title">{product.Product_name}</p>

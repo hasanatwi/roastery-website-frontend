@@ -18,7 +18,7 @@ function Item({isValid, nameOfTheUser, email}){
     useEffect(()=>{
         const fetchData=async()=>{
             try{
-                const response=await fetch(`http://localhost:3000/api/item/${name_of_the_category}/${title}`);
+                const response=await fetch(`https://roastery-website-backend-2.onrender.com/api/item/${name_of_the_category}/${title}`);
                 if(!response.ok){
                     console.log("The response was unfortunately not ok");
                     throw new Error(`HTTP: ${response.status} : ${response.statusText}`);

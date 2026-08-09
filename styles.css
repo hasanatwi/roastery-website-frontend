@@ -459,11 +459,7 @@
 .itemInfo b{
   font-size:18px;
 }
-.displayingItem img{
-  width:400px;
-  height:350px;
-  margin-top:40px;
-}
+
 .buttons{
   display:flex;
   gap:10px;

@@ -22,10 +22,12 @@ function Note({ isValid2, nameOfTheUser }) {
       <Header isValid2={isValid2} nameOfTheUser={nameOfTheUser} />
       <div
         style={{
-          backgroundImage: `url(${coffeeBeans})`,
-          backgroundSize: "1600px 600px",
-          backgroundRepeat: "no-repeat",
-          height: "600px",
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          width: "100%",
+          height:"600px",
+          display:"flex",
+          flexDirection:"column",
         }}
       >
         <div className="margin">

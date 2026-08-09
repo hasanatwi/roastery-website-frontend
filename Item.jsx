@@ -52,7 +52,7 @@ function Item({isValid, nameOfTheUser, email}){
         <div className="Item">
             <Header isValid={isValid} nameOfTheUser={nameOfTheUser} email={email}/>
             <div style={{
-                  display:flex;
+                  display:"flex";
                   flexWrap:"wrap",
                   marginTop:"100px",
                   marginLeft:"350px",

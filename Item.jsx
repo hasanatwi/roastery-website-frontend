@@ -59,7 +59,7 @@ function Item({isValid, nameOfTheUser, email}){
                   backgroundColor:"lightyellow",
             }}>
                 <img src={product.Image} style={{
-                    width:"400px",
+                    width:"300px",
                   height:"350px",
                   marginTop:"40px",
                 }}/>

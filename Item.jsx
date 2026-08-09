@@ -58,7 +58,11 @@ function Item({isValid, nameOfTheUser, email}){
                   marginLeft:"350px",
                   backgroundColor:"lightyellow",
             }}>
-                <img src={product.Image}/>
+                <img src={product.Image} style={{
+                    width:"400px",
+                  height:"350px",
+                  marginTop:"40px",
+                }}/>
                 <div className="itemInfo">
                     <p id="title">{product.Product_name}</p>
                     <p>{displayPrice} $</p>

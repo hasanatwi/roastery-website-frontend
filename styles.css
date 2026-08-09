@@ -445,13 +445,7 @@
   background-color:lightyellow;
   min-height:750px;
 }
-.displayingItem{
-  display:flex;
-  flex-wrap:wrap;
-  margin-top:100px;
-  margin-left:350px;
-  background-color:lightyellow;
-}
+
 .itemInfo{
   margin-left:30px;
 }

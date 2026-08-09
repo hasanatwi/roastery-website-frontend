@@ -8,7 +8,8 @@ const coffeeBeans =
   "https://lkxdeoexdxrizzkblvac.supabase.co/storage/v1/object/public/product-images/coffee%20and%20beans.png";
 function Note({ isValid2, nameOfTheUser }) {
   const location = useLocation();
-
+  const backgroundImage="https://lkxdeoexdxrizzkblvac.supabase.co/storage/v1/object/public/product-images/coffee%20and%20beans.png";
+  
   useEffect(() => {
     if (location.hash) {
       const element = document.querySelector(location.hash);

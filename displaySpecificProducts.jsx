@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Header from "./Header";
 import Category from "./Category";
 function DisplaySpecificProducts({isValid, nameOfTheUser, email}){
-    console.log("The value of isValid is: "+isValid);
+    console.log("I am in displaySpecificProducts The value of isValid is: "+isValid);
     console.log("The value of nameOfTheUser is: "+nameOfTheUser);
     console.log("The value of email is: "+email);
     const {title}=useParams();

@@ -6,6 +6,7 @@ import Category from "./Category";
 function DisplaySpecificProducts({isValid2, nameOfTheUser, email}){
     const {title}=useParams();
     console.log("The title is: "+title);
+    console.log("The value of isValid2 is: "+isValid2);
     console.log("Hello world");
     console.log("The value of nameOfTheUser is: "+nameOfTheUser);
     console.log("The value of email is: "+email);

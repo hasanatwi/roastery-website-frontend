@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
-function Item({isValid, nameOfTheUser, email}){
+function Item({isValid2, nameOfTheUser, email}){
     const [product, setProduct]=useState(null); 
     const { name_of_the_category, title } = useParams();
     const [active1, setActive1]=useState(false);

@@ -63,6 +63,7 @@ function App() {
               <DisplaySpecificProducts
                 isValid2={isValid}
                 nameOfTheUser={nameOfTheUser}
+                email={email}
               />
             }
           />

@@ -135,7 +135,7 @@ function Item({isValid2, nameOfTheUser, email2}){
                                     credentials: "include",
                                 }   
                             );
-                            if(response.ok){
+                            if(response){
                                 alert("Your product was added to the cart");
                             }
                             else{

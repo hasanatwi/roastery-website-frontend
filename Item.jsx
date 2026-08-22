@@ -144,6 +144,8 @@ function Item({isValid2, nameOfTheUser, email2}){
                                 alert("Your product was not added to the cart");
                            }  
                         }
+                        }
+                        }
                         >ADD TO CART</button>
                     </div>
                     <hr style={{

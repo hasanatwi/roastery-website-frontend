@@ -49,7 +49,7 @@ function DisplaySpecificProducts({isValid2, nameOfTheUser, email}){
             backgroundColor:"lightyellow",
             minHeight:"745px",
         }}>
-            <Header isValid={isValid} nameOfTheUser={nameOfTheUser} email={email}/>
+            <Header isValid={isValid2} nameOfTheUser={nameOfTheUser} email={email}/>
             <div style={{
                 display: "flex",
                 gap: "20px",

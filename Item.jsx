@@ -129,7 +129,7 @@ function Item({isValid2, nameOfTheUser, email2}){
                            else{
                             const productName=product.Product_name;
                             const response= await fetch(
-                                `http://localhost:3000/addToCart?email=${email2}&productName=${productName}&totalWeight=${totalWeight}&totalPrice=${totalPrice}`,
+                                `https://roastery-website-backend-2.onrender.com/addToCart?email=${email2}&productName=${productName}&totalWeight=${totalWeight}&totalPrice=${totalPrice}`,
                                 {
                                     method: "POST",
                                     credentials: "include",

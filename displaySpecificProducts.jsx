@@ -7,7 +7,6 @@ function DisplaySpecificProducts({isValid2, nameOfTheUser, email}){
     const {title}=useParams();
     console.log("The title is: "+title);
     console.log("Hello world");
-    console.log("I am in displaySpecificProducts The value of isValid is: "+isValid);
     console.log("The value of nameOfTheUser is: "+nameOfTheUser);
     console.log("The value of email is: "+email);
     const [products, setProducts]=useState([]);

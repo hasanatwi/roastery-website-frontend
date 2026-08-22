@@ -127,6 +127,8 @@ function Item({isValid2, nameOfTheUser, email2}){
                                 return; 
                            }
                            else{
+                            console.log("fetching from the database will start now");
+                               
                             const productName=product.Product_name;
                             const response= await fetch(
                                 `https://roastery-website-backend-2.onrender.com/addToCart?email=${email2}&productName=${productName}&totalWeight=${totalWeight}&totalPrice=${totalPrice}`,

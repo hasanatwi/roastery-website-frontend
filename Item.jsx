@@ -32,7 +32,7 @@ function Item({isValid2, nameOfTheUser, email2}){
             }
             catch(err){
                 console.log("an error has occured");
-                console.error("An error has occured",error);
+                console.error("An error has occured",err);
                 setProduct(null);
             }
         }
@@ -137,7 +137,7 @@ function Item({isValid2, nameOfTheUser, email2}){
                                     credentials: "include",
                                 }   
                             );
-                            if(response){
+                            if(response.ok){
                                 alert("Your product was added to the cart");
                             }
                             else{

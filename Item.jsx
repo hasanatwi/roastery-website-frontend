@@ -14,7 +14,7 @@ function Item({isValid, nameOfTheUser, email}){
     const [totalPrice, setTotalPrice]= useState(0);
     const [quantity, setQuantity]= useState(0);
     const [verifyQuantity, setVerifyQuantity]=useState(true);
-    
+    console.log("The value of isValid is: "+isValid);
     useEffect(()=>{
         const fetchData=async()=>{
             try{

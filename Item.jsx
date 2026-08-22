@@ -50,7 +50,7 @@ function Item({isValid2, nameOfTheUser, email2}){
         );
     return(
         <div className="Item">
-            <Header isValid={isValid} nameOfTheUser={nameOfTheUser} email={email}/>
+            <Header isValid2={isValid2} nameOfTheUser={nameOfTheUser} email={email}/>
             <div style={{
                   display:"flex",
                   flexWrap:"wrap",

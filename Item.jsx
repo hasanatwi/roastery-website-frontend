@@ -49,7 +49,7 @@ function Item({isValid2, nameOfTheUser, email2}){
         );
     return(
         <div className="Item">
-            <Header isValid2={isValid2} nameOfTheUser={nameOfTheUser} email={email}/>
+            <Header isValid2={isValid2} nameOfTheUser={nameOfTheUser}/>
             <div style={{
                   display:"flex",
                   flexWrap:"wrap",
@@ -129,7 +129,7 @@ function Item({isValid2, nameOfTheUser, email2}){
                            else{
                             const productName=product.Product_name;
                             const response= await fetch(
-                                `http://localhost:3000/addToCart?email=${email}&productName=${productName}&totalWeight=${totalWeight}&totalPrice=${totalPrice}`,
+                                `http://localhost:3000/addToCart?email=${email2}&productName=${productName}&totalWeight=${totalWeight}&totalPrice=${totalPrice}`,
                                 {
                                     method: "POST",
                                     credentials: "include",

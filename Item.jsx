@@ -123,7 +123,7 @@ function Item({isValid2, nameOfTheUser, email2}){
                         
                         <button
                         onClick={async()=>{
-                           if(!isValid){
+                           if(!isValid2){
                                 window.location.href="/sign_in";
                                 return; 
                            }
